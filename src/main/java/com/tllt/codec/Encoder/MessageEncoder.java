@@ -1,7 +1,9 @@
 package com.tllt.codec.Encoder;
 
 import com.tllt.codec.Utils.Message;
+import com.tllt.codec.Utils.MyCodecHelper;
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 
@@ -12,5 +14,6 @@ public class MessageEncoder extends MessageToByteEncoder<Message> {
     protected void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
         out.writeInt(msg.getLength());
         out.writeBytes(msg.getData());
+
     }
 }

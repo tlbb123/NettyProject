@@ -1,7 +1,6 @@
 package com.tllt.codec.Client;
 
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 import io.netty.util.concurrent.GlobalEventExecutor;
@@ -22,7 +21,6 @@ public class MyClientHandler extends SimpleChannelInboundHandler<String> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        ctx.writeAndFlush("请求连接");
         executor = GlobalEventExecutor.INSTANCE;
         scanner = new Scanner(System.in);
         executor.submit(() -> {

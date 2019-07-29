@@ -1,10 +1,12 @@
 package com.tllt.codec.Utils;
 
+import io.netty.buffer.ByteBuf;
+
 import java.io.Serializable;
 
 public class Message implements Serializable {
     private int length;//总长度
-    private byte[] data;
+    private ByteBuf data;
 
 
     public int getLength() {
@@ -15,11 +17,11 @@ public class Message implements Serializable {
         this.length = length;
     }
 
-    public byte[] getData() {
+    public ByteBuf getData() {
         return data;
     }
 
-    public void setData(byte[] data) {
+    public void setData(ByteBuf data) {
         this.data = data;
     }
 

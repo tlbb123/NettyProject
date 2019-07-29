@@ -8,9 +8,9 @@ import java.util.List;
 
 public class MessageToStringDecoder extends MessageToMessageDecoder<ByteBuf> {
 
-
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) {
         out.add(msg.toString(MyCodecHelper.charset));
     }
+
 }
